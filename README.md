@@ -1,4 +1,47 @@
-# Getting Started with Create React App
+# $$\textcolor{red}{\text{UNDER CONSTRUCTION}}$$
+
+## 1. Project Title:
+
+Todo List Application
+
+## 2. Project Description:
+
+Program a todo list application
+
+## 3. Tech Stack: 
+
+- MongoDB
+- Express
+- React
+- Node
+
+## 4. What is the MVP?
+
+1. Add an item to the list
+   
+2. Amend item in list
+   
+3. Delete item in list
+
+## 5. What are the sprinkles? 
+
+## 6. When will the project be complete? 
+
+The project is completed after all MVP's are implemented.
+
+## 7. Adapted from: 
+
+UDEMY Course Name: Build a To-Do List App with Node, Express, React and MongoDB
+
+Created by: Moath M.
+
+Last updated: 09/2021
+
+URL: https://www.udemy.com/course/java-servlet-jsp-and-hibernate-build-a-complete-website/
+
+# Tutorial:
+
+## Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
