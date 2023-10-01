@@ -9,7 +9,7 @@ const Form = () => {
               <input type="text" />
             </div>
             <div className="column one wide">
-              <button type="submit">+</button>
+              <button type="submit" className="ui button circular icon"><i className="plus icon"></i></button>
             </div>
           </div>
         </div>
