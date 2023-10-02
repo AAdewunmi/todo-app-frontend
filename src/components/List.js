@@ -2,9 +2,9 @@ import React from "react";
 
 const List = () => {
     return (
-      <div className="ui grid">
+      <div className="ui grid center aligned">
         <div className="row">
-          <div className="column five wide">Test</div>
+          <div className="column five wide"><h2>Test</h2></div>
           <div className="column one wide">
             <button className="ui button circular icon green">
               <i className="white check icon"></i>
