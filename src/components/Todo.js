@@ -6,12 +6,19 @@ const Todo = () => {
     const handleDivDoubleClick = () => {
         setIsEditing(true);
     };
+
+    const handleInputKeyDown = (e) => {
+        const key = e.keyCode;
+        if (key === 13 || key === 27) {
+          setIsEditing(false)
+        }
+    };
     
     return isEditing ? (
       <div className="row" onDoubleClick={handleDivDoubleClick}>
         <div className="column seven wide">
           <div className="ui input fluid">
-            <input />
+            <input onKeyDown={handleInputKeyDown}/>
           </div>
         </div>
       </div>
