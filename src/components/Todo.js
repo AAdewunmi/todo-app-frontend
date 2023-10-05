@@ -18,7 +18,10 @@ const Todo = () => {
       <div className="row" onDoubleClick={handleDivDoubleClick}>
         <div className="column seven wide">
           <div className="ui input fluid">
-            <input onKeyDown={handleInputKeyDown}/>
+            <input 
+            onKeyDown={handleInputKeyDown}
+            autoFocus={true}
+            />
           </div>
         </div>
       </div>
