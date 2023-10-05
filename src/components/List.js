@@ -3,7 +3,7 @@ import Todo from "./Todo";
 
 const List = () => {
     return (
-      <Todo />
+      <Todo title="Test #1" />
     );
 };
 
