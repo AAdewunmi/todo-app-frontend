@@ -3,19 +3,25 @@ import React, {useState} from "react";
 const Todo = ({ title }) => {
     const[isEditing, setIsEditing] = useState(false);
     const[value, setValue] = useState(title);
+    const [tempValue, setTempValue] = useState(title);
+
     const handleDivDoubleClick = () => {
         setIsEditing(true);
     };
 
     const handleInputKeyDown = (e) => {
         const key = e.keyCode;
-        if (key === 13 || key === 27) {
-          setIsEditing(false)
+        if (key === 13) {
+          setValue(tempValue);
+          setIsEditing(false);
+        }else if (key === 27) {
+          setTempValue(value);
+          setIsEditing(false);
         }
     };
     
     const handleInputOnChange = (e) => {
-        setValue(e.target.value);
+        setTempValue(e.target.value);
     }
 
     return isEditing ? (
@@ -26,7 +32,7 @@ const Todo = ({ title }) => {
             onChange={handleInputOnChange}
             onKeyDown={handleInputKeyDown}
             autoFocus={true}
-            value = {value}
+            value = {tempValue}
             />
           </div>
         </div>
