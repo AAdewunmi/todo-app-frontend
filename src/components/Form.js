@@ -1,13 +1,17 @@
 import React, {useState} from "react";
 
-const Form = () => {
+const Form = ({ addTodo }) => {
   const [inputValue, setInputValue] = useState("");
   const handleInputChange = (e) => {
       setInputValue(e.target.value);
   };
+  const handleFormSubit = (e) => {
+      e.preventDefault();
+      addTodo({title: inputValue, completed: false});
+  };
 
     return (
-      <form className="ui form">
+      <form className="ui form" onSubmit={handleFormSubit}>
         <div className="ui grid center aligned">
           <div className="row">
             <div className="column five wide">
