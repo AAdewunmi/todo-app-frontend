@@ -26,11 +26,11 @@ const Todo = ({ title, completed }) => {
     };
 
     const handleButtonClick = () => {
-        setCompleted(true);
+        setCompleted((oldCompleted) => !oldCompleted);
     };
 
     return (
-      <div className="row" onDoubleClick={handleDivDoubleClick}>
+      <div className="row">
         {isEditing ? (
           <div className="column seven wide">
             <div className="ui input fluid">
@@ -44,22 +44,26 @@ const Todo = ({ title, completed }) => {
           </div>
         ) : (
           <div className="ui grid center aligned">
-            <div className="column five wide">
-              <h2 className={"ui header" + (completedState ? " green" : "")}>{value}</h2>
+            
+            <div className="column five wide" onDoubleClick={handleDivDoubleClick}>
+              <h2 className={"ui header" + (completedState ? " green" : "")}> {value} </h2>
             </div>
+            
             <div className="column one wide">
-              <button 
-                className="ui button circular icon green"
+              <button
+                className={"ui button circular icon" + (completedState ? " blue" : " green")}
                 onClick={handleButtonClick}
-                >
+              >
                 <i className="white check icon"></i>
               </button>
             </div>
+            
             <div className="column one wide">
               <button className="ui button circular icon red">
                 <i className="white remove icon"></i>
               </button>
             </div>
+          
           </div>
         )}
       </div>
