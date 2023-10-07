@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useState} from "react";
 import Form from "./components/Form";
 import Section from "./components/Sections";
 import List from "./components/List";
@@ -6,7 +6,12 @@ import List from "./components/List";
 
 const appTitle = "To-Do App"
 
+const list = [{ title: "Test #1", completed: false}, 
+{ title: "Test #2", completed: false}, 
+{ title: "Test #3", completed: false}];
+
 const App = () => {
+  const [todoList, setTodoList] = useState(list);
     return (
       <div className="ui container center aligned">
         <Section>
@@ -16,7 +21,7 @@ const App = () => {
           <Form />
         </Section>
         <Section>
-          <List />
+          <List list={todoList}/>
         </Section>
       </div>
     );

@@ -1,10 +1,10 @@
 import React, {useState} from "react";
 
-const Todo = ({ title }) => {
+const Todo = ({ title, completed }) => {
     const[isEditing, setIsEditing] = useState(false);
     const[value, setValue] = useState(title);
-    const [tempValue, setTempValue] = useState(title);
-    const [completed, setCompleted] = useState(false)
+    const[tempValue, setTempValue] = useState(title);
+    const[completedState, setCompleted] = useState(completed)
 
     const handleDivDoubleClick = () => {
         setIsEditing(true);
@@ -45,7 +45,7 @@ const Todo = ({ title }) => {
         ) : (
           <div className="ui grid center aligned">
             <div className="column five wide">
-              <h2 className={"ui header" + (completed ? " green" : "")}>{value}</h2>
+              <h2 className={"ui header" + (completedState ? " green" : "")}>{value}</h2>
             </div>
             <div className="column one wide">
               <button 

@@ -1,9 +1,15 @@
 import React from "react";
 import Todo from "./Todo";
 
-const List = () => {
+const List = ({ list }) => {
+  const renderedList = list.map((item) => 
+  <Todo title={item.title} 
+  completed={item.completed}
+  key={item.title}/>);
     return (
-      <Todo title="Test #1" />
+      <div className="">
+        {renderedList}
+      </div>
     );
 };
 
