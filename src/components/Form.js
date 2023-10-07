@@ -8,6 +8,7 @@ const Form = ({ addTodo }) => {
   const handleFormSubit = (e) => {
       e.preventDefault();
       addTodo({title: inputValue, completed: false});
+      setInputValue(" ");
   };
 
     return (
