@@ -6,14 +6,19 @@ import List from "./components/List";
 
 const appTitle = "To-Do App"
 
-const list = [{ title: "Test #1", completed: false}, 
-{ title: "Test #2", completed: false}, 
-{ title: "Test #3", completed: false}];
+const list = [
+  { id: 1, title: "Test #1", completed: false },
+  { id: 2, title: "Test #2", completed: false },
+  { id: 3, title: "Test #3", completed: false },
+];
 
 const App = () => {
   const [todoList, setTodoList] = useState(list);
   const addTodo = (item) => {
     setTodoList((oldList) => [...oldList, item]);
+  };
+  const removeTodo = (id) => {
+
   };
     return (
       <div className="ui container center aligned">
@@ -24,7 +29,7 @@ const App = () => {
           <Form addTodo={addTodo}/>
         </Section>
         <Section>
-          <List list={todoList}/>
+          <List removeTodoListProp={removeTodo} list={todoList}/>
         </Section>
       </div>
     );

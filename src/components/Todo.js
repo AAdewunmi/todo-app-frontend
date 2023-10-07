@@ -1,6 +1,6 @@
 import React, {useState} from "react";
 
-const Todo = ({ title, completed }) => {
+const Todo = ({ title, completed, removeTodoItemProp }) => {
     const[isEditing, setIsEditing] = useState(false);
     const[value, setValue] = useState(title);
     const[tempValue, setTempValue] = useState(title);
@@ -44,26 +44,34 @@ const Todo = ({ title, completed }) => {
           </div>
         ) : (
           <div className="ui grid center aligned">
-            
-            <div className="column five wide" onDoubleClick={handleDivDoubleClick}>
-              <h2 className={"ui header" + (completedState ? " green" : "")}> {value} </h2>
+            <div
+              className="column five wide"
+              onDoubleClick={handleDivDoubleClick}
+            >
+              <h2 className={"ui header" + (completedState ? " green" : "")}>
+                {" "}
+                {value}{" "}
+              </h2>
             </div>
-            
+
             <div className="column one wide">
               <button
-                className={"ui button circular icon" + (completedState ? " blue" : " green")}
+                className={
+                  "ui button circular icon" +
+                  (completedState ? " blue" : " green")
+                }
                 onClick={handleButtonClick}
               >
                 <i className="white check icon"></i>
               </button>
             </div>
-            
+
             <div className="column one wide">
               <button className="ui button circular icon red">
+                onClick={removeTodoItemProp}
                 <i className="white remove icon"></i>
               </button>
             </div>
-          
           </div>
         )}
       </div>
