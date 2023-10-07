@@ -18,7 +18,7 @@ const App = () => {
     setTodoList((oldList) => [...oldList, item]);
   };
   const removeTodo = (id) => {
-
+    setTodoList((oldList) => oldList.filter((item) => item.id !== id));
   };
     return (
       <div className="ui container center aligned">
