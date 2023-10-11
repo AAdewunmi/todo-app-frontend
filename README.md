@@ -6,7 +6,7 @@ Todo List Application
 
 ## 2. Project Description:
 
-Program a todo list application
+Program the frontend a todo list application
 
 ## 3. Tech Stack: 
 
