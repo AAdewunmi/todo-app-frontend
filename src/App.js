@@ -25,9 +25,11 @@ const App = () => {
     );
   }, []);
 
-  const addTodo = (item) => {
-    setTodoList((oldList) => [...oldList, item]);
+  const addTodo = async (item) => {
+    const { data } = await axios.post("http://localhost:3030/todos/", item);
+    setTodoList((oldList) => [...oldList, data ]);
   };
+
   const removeTodo = (id) => {
     setTodoList((oldList) => oldList.filter((item) => item.id !== id));
   };
