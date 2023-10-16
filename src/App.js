@@ -8,18 +8,12 @@ import List from "./components/List";
 
 const appTitle = "To-Do App"
 
-const list = [
-  { id: 1, title: "Test #1", completed: false },
-  { id: 2, title: "Test #2", completed: false },
-  { id: 3, title: "Test #3", completed: false },
-];
-
 const App = () => {
-  const [todoList, setTodoList] = useState(list);
+  const [todoList, setTodoList] = useState([]);
   useEffect(() => {
     async function fetchData(){
-      const response = await axios.get("http://localhost:3030/todos/");
-      console.log(response);
+      const {data} = await axios.get("http://localhost:3030/todos/");
+      setTodoList(data);
     }
     fetchData().then(
       (result) => {
