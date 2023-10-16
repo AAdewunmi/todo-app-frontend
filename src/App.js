@@ -1,10 +1,8 @@
 import React, {useState, useEffect} from "react";
-//import axios from 'axios';
 import todos from "./apis";
 import Form from "./components/Form";
 import Section from "./components/Sections";
 import List from "./components/List";
-import axios from "axios";
 
 
 
@@ -30,6 +28,10 @@ const App = () => {
     setTodoList((oldList) => oldList.filter((item) => item._id !== id));
   };
 
+  const editTodo = async (id, item) => {
+    await todos.put(`/todos/${id}`, item);
+  };
+
     return (
       <div className="ui container center aligned">
         <Section>
@@ -39,7 +41,10 @@ const App = () => {
           <Form addTodo={addTodo}/>
         </Section>
         <Section>
-          <List removeTodoListProp={removeTodo} list={todoList}/>
+          <List 
+          editTodoListProp = {editTodo}
+          removeTodoListProp={removeTodo} 
+          list={todoList}/>
         </Section>
       </div>
     );
