@@ -1,8 +1,9 @@
 import React, {useState, useEffect} from "react";
+import axios from 'axios';
 import Form from "./components/Form";
 import Section from "./components/Sections";
 import List from "./components/List";
-import axios from "axios";
+
 
 
 const appTitle = "To-Do App"
