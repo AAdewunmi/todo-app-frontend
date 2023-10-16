@@ -1,5 +1,6 @@
 import React, {useState, useEffect} from "react";
-import axios from 'axios';
+//import axios from 'axios';
+import axiosRoute from "./apis";
 import Form from "./components/Form";
 import Section from "./components/Sections";
 import List from "./components/List";
@@ -12,7 +13,7 @@ const App = () => {
   const [todoList, setTodoList] = useState([]);
   useEffect(() => {
     async function fetchData(){
-      const {data} = await axios.get("http://localhost:3030/todos/");
+      const {data} = await axiosRoute.get("/todos");
       setTodoList(data);
     }
     fetchData().then(
@@ -26,7 +27,7 @@ const App = () => {
   }, []);
 
   const addTodo = async (item) => {
-    const { data } = await axios.post("http://localhost:3030/todos/", item);
+    const { data } = await axiosRoute.post("/todos", item);
     setTodoList((oldList) => [...oldList, data ]);
   };
 
