@@ -21,7 +21,14 @@ const App = () => {
       const response = await axios.get("http://localhost:3030/todos/");
       console.log(response);
     }
-    fetchData();
+    fetchData().then(
+      (result) => {
+        console.log(result);
+      },
+      (error) => {
+        console.log(error);
+      }
+    );
   }, []);
 
   const addTodo = (item) => {
