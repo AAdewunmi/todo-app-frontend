@@ -5,8 +5,8 @@ const List = ({ list, removeTodoListProp }) => {
   const renderedList = list.map((item) => (
     <Todo
       title={item.title}
-      completed={item.completed}
-      removeTodoItemProp={(e) => removeTodoListProp(item.id)}
+      completed={item.completed}                                   
+      removeTodoItemProp={(e) => removeTodoListProp(item._id)}
       key={item.title}
     />
   ));
